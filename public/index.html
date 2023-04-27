@@ -10,15 +10,14 @@
     <!-- ============================================ -->
     <!-- CONTAINER -->
     <div id="board" class="chartContainer splitflap">
-      <h1>Arrivals</h1>
 
       <!-- Header: 30px/char, 15px/separator, 120px/logo -->
-      <div class="header" style="width:120px;margin-left:0px;">Airline</div>
-      <div class="header" style="width:120px;margin-left:30px;">Flight</div>
+      <div class="header" style="width:120px;margin-left:0px;">Service</div>
+      <div class="header" style="width:120px;margin-left:30px;">Train number</div>
       <div class="header" style="width:360px;margin-left:30px;text-align:left;">
-        City
+        Destination
       </div>
-      <div class="header" style="width:90px;margin-left:30px;">Gate</div>
+      <div class="header" style="width:90px;margin-left:30px;">Platform</div>
       <div class="header" style="width:135px;margin-left:30px;">Scheduled</div>
       <div class="header" style="width:270px;margin-left:30px;text-align:left;">
         Remarks
@@ -33,16 +32,16 @@
     <!-- ROW TEMPLATE -->
     <script type="text/template" id="row_template">
       <div class="row">
-        <div class="group airline"> <!-- airline -->
+        <div class="group airline"> <!-- Service -->
           <div class="image"><span></span></div>
         </div>
-        <div class="group flight"> <!-- flight number -->
+        <div class="group flight"> <!-- train number -->
           <div class="number"><span></span></div>
           <div class="number"><span></span></div>
           <div class="number"><span></span></div>
           <div class="number"><span></span></div>
         </div>
-        <div class="group city"> <!-- city -->
+        <div class="group city"> <!-- destination -->
           <div class="character"><span></span></div>
           <div class="character"><span></span></div>
           <div class="character"><span></span></div>
@@ -56,7 +55,7 @@
           <div class="character"><span></span></div>
           <div class="character"><span></span></div>
         </div>
-        <div class="group gate"> <!-- gate -->
+        <div class="group gate"> <!-- platform -->
           <div class="character"><span></span></div>
           <div class="number"><span></span></div>
           <div class="number"><span></span></div>

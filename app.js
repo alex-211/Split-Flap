@@ -39,73 +39,66 @@ function getTail() {
   return `N${getRandomInt(9999)}${c[getRandomInt(c.length - 1)]}`;
 }
 
-function getAirline() {
-  const airlines = [
-    'SWA',
-    'AAL',
-    'BAW',
-    'DAL',
-    'UAE',
-    'KLM',
-    'DLH',
-    'ASA',
-    'UAL',
-    'FDX',
-    'PXM',
-    'SKW',
-    'JBU',
-    'ACA',
-    'QXE',
-    'NKS',
-    'VIR',
-    'LXJ',
-    'QFA'
+function getService() {
+  const services = [
+    'SUB', // Suburbano
+    'REG', // Regionale
+    'RGX', // Regionale Express
+    'IRG', // Inter-regionale
+    'ICG', // InterCity Giorno
+    'ICN', // InterCity Notte
+    'FRB', // Frecciabianca
+    'FRA', // Frecciaargento
+    'FRR', // Frecciarossa
+    'ITL', // .italo
+    'TGV', // Tren de Grand Vitesse
+    'EUC', // EuroCity
+    'EUS' // EuroStar
   ];
-  return airlines[getRandomInt(airlines.length - 1)];
+  return services[getRandomInt(services.length - 1)];
 }
 
 function getTime() {
   return '01:23';
 }
 
-function getFlight() {
+function getTrainNO() {
   return getRandomInt(2000);
 }
-
+// what is this?
 function getHeading() {
   return getRandomInt(359)
     .toString()
     .padStart(3, '0');
 }
 
-function getGate() {
-  const t = ['A', 'B', 'C'][getRandomInt(2)];
+function getPLTF() {
   const g = getRandomInt(30);
-  return `${t}${g}`;
+  return `g`;
 }
 
 function getCity() {
   const cities = [
-    'Atlanta',
-    'Baltimore',
-    'Charleston',
-    'Durban',
-    'Edinburgh',
-    'Frankfurt',
-    'Galveston',
-    'Havana',
-    'Iowa City',
-    'Jakarta',
-    'Karachi',
-    'Los Angeles',
-    'Mexico City',
-    'Nairobi',
-    'Ontario',
-    'Pittsburgh',
-    'Quebec City',
-    'Roanoake',
-    'San Diego',
-    'Tallahassee'
+    'Torino Porta Nuova',
+    'Milano Centrale',
+    'Genova Piazza Principe',
+    'Roma Termini',
+    'Napoli Centrale',
+    'Venezia Santa Lucia',
+    'Bari Centrale',
+    'Reggio Calabria Centrale',
+    'Reggio Emilia Mediopadan AV',
+    'Firenze Santa Maria Novella',
+    'Verona Porta Nuova',
+    'Triestre Centrale',
+    'Zurigo HB',
+    'Parigi Gare De Lyon',
+    'Marsiglia St. Charles',
+    'Bolzano',
+    'Lecce',
+    'Catania',
+    'Rimini',
+    'Udine'
   ];
   return cities[getRandomInt(20)];
 }
@@ -131,10 +124,10 @@ app.use('/api/arrivals', (req, res) => {
   for (let i = 0; i < 18; i++) {
     // Create the data for a row.
     let data = {
-      airline: getAirline(),
-      flight: getFlight(),
+      airline: getService(),
+      flight: getTrainNO(),
       city: getCity(),
-      gate: getGate(),
+      gate: getPLTF(),
       scheduled: getTime()
     };
 
